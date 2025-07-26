@@ -7,8 +7,6 @@ let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 
-console.log(cards)
-
 function getRandomCard() {
     let randomNumer = Math.floor( Math.random()*13 ) + 1
     if (randomNumer > 10) {
@@ -26,8 +24,6 @@ function startGame() {
     let secondCard = getRandomCard()
     cards = [firstCard, secondCard]
     sum = firstCard + secondCard
-    // Generate two random numbes
-    // Re-assign the cards and sum variables so that the game can start
     renderGame()
 }
 
@@ -52,8 +48,12 @@ function renderGame() {
 
 
 function newCard() {
-    let card = getRandomCard()
-    sum += card
-    cards.push(card)
-    renderGame()
+    // Only allow the player to get a new card if she IS alive and does NOT have Blackjack
+    if (isAlive === true && hasBlackJack === false) {
+        let card = getRandomCard()
+        sum += card
+        cards.push(card)
+        renderGame()        
+    }
+
 }
