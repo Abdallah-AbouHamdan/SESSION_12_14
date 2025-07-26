@@ -1,9 +1,11 @@
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
     background-image: url("img.webp");
+    background-repeat: no-repeat;
     background-size: cover;
     font-weight: bold;
     color: white;
+    height: 100vh;
     text-align: center;
 }
 
